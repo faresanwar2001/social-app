@@ -21,7 +21,7 @@ export const PostsSlice = createSlice({
       console.log(action); 
       if(action.payload.message === "success"){
 
-          state.posts = action.payload
+          state.posts = action.payload.posts
           console.log(state.posts);
       }
       

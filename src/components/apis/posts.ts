@@ -11,7 +11,7 @@ export const GetPosts = createAsyncThunk("posts", async () => {
     },
   });
 
-  const payload:ApiResponse<Posts[]> = res.data;
+  const payload:ApiResponse<{posts:Posts[]}> = res.data;
 
   if("error" in payload){
     throw new Error(payload.error)

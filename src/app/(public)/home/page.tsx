@@ -1,22 +1,12 @@
-import { GetPosts } from "@/components/apis/posts";
-import type { AppDispatch, RootState } from "@/redux/redux-store"
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux"
+import { lazy, Suspense } from "react";
+const Posts = lazy(()=> import ("../posts/page" ))
 
 export default function HomePage() {
-
-  const dispatch=useDispatch<AppDispatch>()
-  const posts =useSelector((state: RootState)=>state.posts.posts)
-
-  useEffect(()=>{
-    dispatch(GetPosts())
-  },[dispatch])
   
   return (
-    <div>
-    {posts?.map((item)=><div key={item._id}>
-      <p>{item.body}</p>
-    </div>)}
-</div>
+    <Suspense fallback={"Loading"}>
+      {/* Posts */}
+    <Posts/>
+</Suspense>
   )
 }

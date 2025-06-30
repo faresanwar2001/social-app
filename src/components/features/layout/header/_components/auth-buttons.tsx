@@ -5,7 +5,7 @@ import type { RootState } from "@/redux/redux-store";
 
 export default function AuthButtons() {
   // Session
-  const user = useSelector((state: RootState)=>state.counter.userToken)
+  const user = useSelector((state: RootState)=>state.loginAuth.userToken)
   
   return (
     <div className="flex items-center gap-8">
