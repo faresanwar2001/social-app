@@ -11,7 +11,7 @@ const initialState: LoginInitial = {
 
 
 const counterSlice = createSlice({
-  name: "counter",
+  name: "loginAuth",
   initialState,
   reducers: {},
   extraReducers: (builder)=>{

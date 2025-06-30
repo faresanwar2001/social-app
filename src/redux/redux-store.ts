@@ -4,7 +4,7 @@ import PostsSlice from "./posts/posts.slice"
 
 export const reduxStore = configureStore({
   reducer: {
-    counter: counterReducer,
+    loginAuth: counterReducer,
     posts:PostsSlice
   },
 })
